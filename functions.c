@@ -4,7 +4,6 @@ void randomize(int** array, int rows, int cols)
     for (int i = 0; i < rows; ++i)
         for (int j = 0; j < cols; ++j)
             array[i][j] = ((rand() - rand()) % 10);
-     srand(time(NULL));
 }
 
 void randomizeZero(int** array, int rows, int cols)
@@ -12,19 +11,17 @@ void randomizeZero(int** array, int rows, int cols)
     for (int i = 0; i < rows; ++i)
         for (int j = 0; j < cols; ++j)
             array[i][j] = ((rand() - rand()) % 2);
-     srand(time(NULL));
 }
 
 void transposing(int** array, int rows, int cols)
 {
-    int temp;
     printf("\n");
     for (int i = 0; i < rows; ++i)
         for (int j = 0; j < cols; ++j)
         {
             if (i == j)
                 break;
-            temp = array[i][j];
+            int temp = array[i][j];
             array[i][j] = array[j][i];
             array[j][i] = temp;
         }
@@ -70,15 +67,11 @@ void multiplication(int** array, int rows, int cols, int cols2)
                 result[i][j] += array[i][k] * matrix2[k][j];
         }
     printf("\n");
-    output(result, rows, cols2);
-    clean(matrix2, rows2);
-    clean(result, rows);
 }
 
 void createLine(char** string, int lenght)
 {
     lenght++;
-    srand(time(NULL));
     *string = (char*)malloc(lenght * sizeof(char));
     for(int i = 0; i <= lenght; ++i)
     {
