@@ -1,6 +1,7 @@
 #include "header.h"
 int main()
 {
+    srand(time(NULL));
     int rows, cols;
     char ch;
     printf("Enter number of task: ");
@@ -35,6 +36,9 @@ int main()
                       randomize(array, rows, cols);
                       output(array, rows, cols);
                       multiplication(array, rows, cols, cols2);
+                      output(result, rows, cols2);
+                      clean(matrix2, rows2);
+                      clean(result, rows);
                       clean(array, rows);
                       printf("Enter number of task: ");
                       break;
