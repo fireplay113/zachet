@@ -80,7 +80,7 @@ void createLine(char** string, int lenght)
     lenght++;
     srand(time(NULL));
     *string = (char*)malloc(lenght * sizeof(char));
-    for(int i = 0; i <= lenght; ++i)
+    for(int i = 0; i < lenght; ++i)
     {
         (*string)[i] = rand() % 10 + '0';
     }
@@ -145,6 +145,7 @@ int zeroLine(int* array, int cols)
             {
                 start = i;
                 ans = tmp;
+                break;
             }
         }
     }
